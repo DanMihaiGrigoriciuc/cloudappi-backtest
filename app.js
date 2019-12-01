@@ -41,7 +41,7 @@ app.get("/users/:userId", (req, res, next) => {
 });
 app.post("/users", (req, res, next) => {
     var user = req.body;
-    let nextId = users.length + 1;
+    let nextId = users[user.length - 1].id + 1;
     user.id = nextId;
     user.address.id = nextId;
     users.push(user);
